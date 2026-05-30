@@ -17,8 +17,7 @@ const profileRoutes = require('./routes/user.routes');
 const uploadRoutes = require('./routes/resumeUpload.route')
 connectDB()
 
-const port = 4000;
-
+const PORT = process.env.PORT || 4000;
 app.use('/api/auth', authRoutes)
 app.use('/api/user', profileRoutes)
 app.use('/api/resume/', uploadRoutes)
