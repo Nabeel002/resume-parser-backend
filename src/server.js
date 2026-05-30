@@ -17,11 +17,10 @@ const profileRoutes = require('./routes/user.routes');
 const uploadRoutes = require('./routes/resumeUpload.route')
 connectDB()
 
-const port = 4000;
-
+const PORT = process.env.PORT || 5000
 app.use('/api/auth', authRoutes)
 app.use('/api/user', profileRoutes)
 app.use('/api/resume/', uploadRoutes)
-app.listen(port, ()=>{
-    console.log(`server running on port ${port}`)
+app.listen(PORT, ()=>{
+    console.log(`server running on port ${PORT}`)
 })
