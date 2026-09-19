@@ -1,11 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const cors  = require('cors')
 
 const app = express();
+const appUrl = process.env.APP_URL;
 app.use(express.json());
 app.use(cors(
-{origin: "https://resume-parser-7jxi.vercel.app", // your frontend URL
+{origin: appUrl, // your frontend URL
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true}
 ))

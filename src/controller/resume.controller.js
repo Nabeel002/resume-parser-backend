@@ -14,7 +14,9 @@ exports.uploadResume =
               req.body.jobDescription,
           });
 
-      res.json(result);
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', 'attachment; filename="optimized-resume.pdf"');
+      res.send(result.pdfBuffer);
 
     } catch (error) {
 
